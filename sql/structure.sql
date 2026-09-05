@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS tbl_company (
+  fld_id INT AUTO_INCREMENT PRIMARY KEY,
+  fld_company_name VARCHAR(100) NULL,
+  fld_create_by_user VARCHAR(100) NOT NULL
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS tbl_user (
+  fld_id INT AUTO_INCREMENT PRIMARY KEY,
+  fld_company_name VARCHAR(100) NULL,
+  fld_firstname VARCHAR(100) NOT NULL,
+  fld_surname VARCHAR(100) NOT NULL,
+  fld_username VARCHAR(50) NOT NULL UNIQUE,
+  fld_password VARCHAR(255) NOT NULL,
+  fld_email VARCHAR(150) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
