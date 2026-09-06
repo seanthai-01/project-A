@@ -1,7 +1,7 @@
 <?php include('funHeader.php');?>
 <fieldset>
     <legend align="center"><h1>Register</h1></legend>
-    <form action="insRegister.php" method="post" target="_self">
+    <form id="registerForm">
         <table align="center">
             <tr>
                 <td>
@@ -29,6 +29,14 @@
             </tr>
             <tr>
                 <td>
+                    <label for="txtEmail">E-mail</label>
+                </td>
+                <td>
+                    <input type="email" name="txtEmail" id="txtEmail" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <label for="txtUsername">Username</label>
                 </td>
                 <td>
@@ -45,27 +53,28 @@
             </tr>
             <tr>
                 <td>
-                    <label for="tytPassword">Confirm Password</label>
+                    <label for="txtPassword">Confirm Password</label>
                 </td>
                 <td>
-                    <input type="password" name="txtPassword" id="txtPassword" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="txtEmail">E-mail</label>
-                </td>
-                <td>
-                    <input type="email" name="txtEmail" id="txtEmail" required>
+                    <input type="password" name="txtPassword" id="txtPassword" onkeydown="checkMatchPassword();" required>
                 </td>
             </tr>
             <tr>
                 <td></td>
+                <td>
+                    <label id="checkMatch"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
                 <td align="left">
-                    <input type="submit" value="Register">
+                    <input type="button" value="Register" id="btnRegister" name="btnRegister" onclick="funRegister()">
                 </td>
             </tr>
         </table>
     </form>
 </fieldset>
 <?php include('funFooter.php'); ?>
+<script src="js/funRegister.js"></script>
